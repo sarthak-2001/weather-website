@@ -14,7 +14,7 @@ const forecast = (lat, long, callback) => {
       } else if (body.error) {
         callback("unable to find location", undefined);
       } else {
-        callback(undefined, `temp is ${body.currently.temperature} and presi chance is ${body.currently.precipProbability}`);
+        callback(undefined, body.daily.data[0].summary+`It is ${body.currently.temperature}° F and presipitation chance is ${body.currently.precipProbability}`);
       }
     }
   );
