@@ -6,6 +6,7 @@ const express = require("express");
 const hbs = require("hbs");
 
 const app = express();
+const port = process.env.PORT || 9000
 
 const public_directory = path.join(__dirname, "../public");
 
@@ -73,6 +74,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(9000, () => {
-  console.log("server started on port 9000");
+app.listen(port, () => {
+  console.log("server started on port "+port);
 });
